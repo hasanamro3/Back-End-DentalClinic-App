@@ -1,0 +1,35 @@
+﻿@model DentalClinic.Models.Admin
+
+<h3 style="text-align: center;">Patient Treatment Details</h3>
+
+<table class="table table-hover">
+    <thead>
+        <tr class="table-dark">
+            <th>Admin ID</th>
+            <th>Patient Name</th>
+            <th>Treatment Description</th>
+            <th>Cost</th>
+            <th>Appointment Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.AdminId</td>
+            <td>@Model.Patient?.PatientName</td>
+            <td>@Model.Treatment?.Description</td>
+            <td>@Model.Treatment?.Cost</td>
+            <td>@Model.AppointmentDate.ToShortDateString()</td>
+        </tr>
+        <tr>
+           
+            
+
+        </tr> 
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr> <a asp-action="Edit" asp-route-id="@Model?.AdminId" style="color: gray;">Edit</a> | </tr>
+        <tr><a asp-action="Index" style="color: gray;">Back to List</a></tr>
+    </thead>
+</table>
